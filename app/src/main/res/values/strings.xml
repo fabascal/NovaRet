@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NovaRet</string>
+    <string name="dashboard">DASHBOARD</string>
+    <string name="contado">CONTADO</string>
+    <string name="credito">CREDITO</string>
+    <string name="anticipos">ANTICIPOS</string>
+    <string name="servicios">SERVICIOS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

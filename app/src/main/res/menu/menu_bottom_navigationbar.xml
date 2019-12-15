@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_dashboard"
+        android:checked="true"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/dashboard"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_contado"
+        android:checked="false"
+        android:icon="@drawable/ic_contado"
+        android:title="@string/contado"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_credito"
+        android:checked="false"
+        android:icon="@drawable/ic_credito"
+        android:title="@string/credito"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_anticipos"
+        android:checked="false"
+        android:icon="@drawable/ic_anticipo"
+        android:title="@string/anticipos"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_servicios"
+        android:checked="false"
+        android:icon="@drawable/ic_shopping"
+        android:title="@string/servicios"
+        app:showAsAction="ifRoom" />
+
+</menu>
