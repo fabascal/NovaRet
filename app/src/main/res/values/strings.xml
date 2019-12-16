@@ -8,4 +8,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_precio_premium">Premium</string>
+    <string name="hint_precio_Magna">Magna</string>
+    <string name="hint_precio_diesel">Diesel</string>
+    <string name="btnTicket">Comprobante</string>
+    <string name="btnCfdi">CFDI\'s</string>
+    <string name="card_title_contado">Publico General</string>
+    <string name="card_message_demo_small">Opción para generar comprobante impreso o factura (CFDI) para clientes no identificados.</string>
+    <string name="card_title_tpv">TPV\'s</string>
+    <string name="card_message_tpv_small">Opción para comprobantes de terminales, terminales bancarias se podrá emitir facturas (CFDI).</string>
+    <string name="card_title_aceite">Aceites</string>
+    <string name="card_message_aceite_small">Identificación de aceites mediante código de barras, obteniendo el precio del volumetrico.</string>
+    <string name="btnCamera">Scan Aceite</string>
 </resources>
