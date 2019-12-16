@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComprobanteActivity">
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvcomprobante"
+        android:text="@string/comprobante"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/common_padding_default"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:id="@+id/dividerTitle"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/common_padding_default"
+        app:layout_constraintTop_toBottomOf="@id/tvcomprobante"
+        android:background="@color/divider_light"
+        app:layout_constraintStart_toStartOf="@id/tvcomprobante"
+        app:layout_constraintEnd_toEndOf="@id/tvcomprobante"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPosicion"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/common_textview_height"
+        android:hint="@string/posicion_carga"
+        app:hintTextColor="@color/color_on_surface"
+        app:startIconDrawable="@drawable/ic_local_gas_station"
+        app:startIconTint="@color/color_on_surface"
+        app:endIconTint="@color/color_on_surface"
+        app:boxCornerRadiusBottomStart="@dimen/circle_radius"
+        app:boxCornerRadiusTopStart="@dimen/circle_radius"
+        app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
+        app:boxCornerRadiusTopEnd="@dimen/circle_radius"
+        android:layout_marginStart="@dimen/common_padding_default"
+        android:layout_marginEnd="@dimen/common_padding_default"
+        app:layout_constraintTop_toBottomOf="@id/dividerTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/actvPosicion"
+            android:background="@color/color_surface"
+            android:textColor="@color/color_on_surface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:paddingStart="@dimen/common_padding_textview"
+            android:paddingEnd="@dimen/common_padding_textview"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
