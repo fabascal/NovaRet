@@ -22,4 +22,16 @@
     <string name="btnCamera">Scan Aceite</string>
     <string name="comprobante">Comprobante</string>
     <string name="posicion_carga">Posicion de Carga</string>
+    <string name="folio">Folio</string>
+    <string name="producto">Producto</string>
+    <string name="volumen">Volumen</string>
+    <string name="precio">Precio</string>
+    <string name="total">Total</string>
+    <string name="print">Imprimir</string>
+    <string name="cliente">Cliente</string>
+    <string name="common_network_error">Problema de conexion</string>
+    <string name="publicogeneral">Publico General</string>
+    <string name="settings">Configuraciones</string>
+    <string name="printer">Impresoras</string>
+    <string name="version">Versión</string>
 </resources>

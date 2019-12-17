@@ -1,10 +1,13 @@
 package com.example.novaret;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +49,26 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         viewPager.setOffscreenPageLimit(5);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.action_dashboard:
+                    viewPager.setCurrentItem(0);
+                    return true;
+                case R.id.action_contado:
+                    viewPager.setCurrentItem(1);
+                    return true;
+                case R.id.action_credito:
+                    viewPager.setCurrentItem(2);
+                    return true;
+                case R.id.action_anticipos:
+                    viewPager.setCurrentItem(3);
+                    return true;
+                case R.id.action_servicios:
+                    viewPager.setCurrentItem(4);
+                    return true;
+            }return false;
+        });
+        /*bottomNavigationView.setOnNavigationItemSelectedListener( new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -68,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                 }return false;
             }
-        });
+        });*/
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             viewPager.addOnUnhandledKeyEventListener(new View.OnUnhandledKeyEventListener() {
                 @Override
@@ -172,5 +194,13 @@ public class MainActivity extends AppCompatActivity {
                 view.setAlpha(0f);
             }
         }
+    }
+    public void CallSettings(MenuItem menuItem){
+        Intent intent = new Intent(MainActivity.this,SettingsActivity.class);
+        startActivity(intent);
+
+    }
+    public void CallPrinter(MenuItem menuItem){
+        Toast.makeText(this,R.string.printer,Toast.LENGTH_SHORT).show();
     }
 }

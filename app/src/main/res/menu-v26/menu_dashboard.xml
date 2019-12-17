@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/printer"
+        android:icon="@drawable/ic_print"
+        android:iconTint="@color/color_on_background"
+        android:title="@string/printer"
+        android:onClick="CallPrinter"/>
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings"
+        android:iconTint="@color/color_on_background"
+        android:title="@string/settings"
+        android:onClick="CallSettings"/>
+
+</menu>

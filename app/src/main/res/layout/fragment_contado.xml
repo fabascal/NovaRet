@@ -148,8 +148,8 @@
                 android:layout_marginStart="@dimen/common_padding_min"
                 android:layout_marginEnd="@dimen/common_padding_min"
                 android:layout_marginTop="@dimen/common_padding_min"
-                android:clickable="true"
-                android:focusable="true">
+                android:clickable="false"
+                android:focusable="false">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -226,8 +226,8 @@
                 android:layout_marginStart="@dimen/common_padding_min"
                 android:layout_marginEnd="@dimen/common_padding_min"
                 android:layout_marginTop="@dimen/common_padding_min"
-                android:clickable="true"
-                android:focusable="true">
+                android:clickable="false"
+                android:focusable="false">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -305,8 +305,8 @@
                 android:layout_marginEnd="@dimen/common_padding_min"
                 android:layout_marginTop="@dimen/common_padding_min"
                 android:layout_marginBottom="@dimen/common_padding_min"
-                android:clickable="true"
-                android:focusable="true">
+                android:clickable="false"
+                android:focusable="false">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
