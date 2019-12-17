@@ -34,4 +34,14 @@
     <string name="settings">Configuraciones</string>
     <string name="printer">Impresoras</string>
     <string name="version">Versión</string>
+    <string name="odbcConnect">ODBC - Connect</string>
+    <string name="ip">192.168.1.250</string>
+    <string name="usuario">Usuario</string>
+    <string name="password">Password</string>
+    <string name="puerto">Puerto</string>
+    <string name="gateway">SGPM Gateway</string>
+    <string name="odbcVolumetrico">ODBC - Volumetrico</string>
+    <string name="facturacion">Facturación</string>
+    <string name="marca">Bandera</string>
+    <string name="estacion">Estacion</string>
 </resources>
