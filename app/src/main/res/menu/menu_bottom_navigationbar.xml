@@ -23,7 +23,7 @@
     <item
         android:id="@+id/action_anticipos"
         android:checked="false"
-        android:icon="@drawable/ic_anticipo"
+        android:icon="@drawable/ic_payment_method"
         android:title="@string/anticipos"
         app:showAsAction="ifRoom" />
     <item

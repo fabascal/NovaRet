@@ -31,6 +31,7 @@ def butterknifeVersion = "10.2.0"
 def dbflowVersion = "4.2.4"
 def glideVersion = "4.10.0"
 def circleimageviewVersion = "3.0.1"
+def volleyVersion = "1.1.1"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -42,8 +43,8 @@ dependencies {
     implementation "com.github.Raizlabs.DBFlow:dbflow:${dbflowVersion}"
     implementation "com.jakewharton:butterknife:${butterknifeVersion}"
     implementation "com.github.bumptech.glide:glide:${glideVersion}"
-
     implementation "de.hdodenhof:circleimageview:${circleimageviewVersion}"
+    implementation "com.android.volley:volley:${volleyVersion}"
 
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

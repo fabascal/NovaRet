@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6"
+        app:layout_constraintGuide_percent="0.5"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
     <com.google.android.material.textview.MaterialTextView
@@ -24,101 +24,86 @@
         android:textAlignment="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/common_padding_default"
+        android:paddingTop="@dimen/common_padding_min"
         android:layout_marginStart="@dimen/common_padding_min"
         android:layout_marginEnd="@dimen/common_padding_min"
+        app:layout_constraintBottom_toBottomOf="@id/tilPosicion"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/tilPosicion" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPosicion"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:layout_marginBottom="@dimen/common_padding_min"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:hint="@string/posicion_carga"
+        app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
+        app:boxCornerRadiusBottomStart="@dimen/circle_radius"
+        app:boxCornerRadiusTopEnd="@dimen/circle_radius"
+        app:boxCornerRadiusTopStart="@dimen/circle_radius"
+        app:endIconTint="@color/color_on_surface"
+        app:hintTextColor="@color/color_on_surface"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_local_gas_station"
+        app:startIconTint="@color/color_on_surface">
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/actvPosicion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_surface"
+            android:paddingStart="@dimen/common_padding_textview"
+            android:paddingEnd="@dimen/common_padding_textview"
+            android:textAlignment="center"
+            android:textColor="@color/color_on_surface"
+            android:textSize="@dimen/common_text_min" />
+    </com.google.android.material.textfield.TextInputLayout>
     <View
         android:id="@+id/dividerTitle"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_marginTop="@dimen/common_padding_view"
-        app:layout_constraintTop_toBottomOf="@id/tvcomprobante"
+        android:layout_marginTop="@dimen/padding_elements_appbarlayout"
+        app:layout_constraintTop_toBottomOf="@id/tilPosicion"
+        android:layout_marginStart="@dimen/common_padding_default"
+        android:layout_marginEnd="@dimen/common_padding_default"
         android:background="@color/divider_light"
-        app:layout_constraintStart_toStartOf="@id/tvcomprobante"
-        app:layout_constraintEnd_toEndOf="@id/tvcomprobante"/>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilCliente"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:hint="@string/cliente"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-        app:boxCornerRadiusTopStart="@dimen/circle_radius"
-        app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
-        app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-        app:hintTextColor="@color/color_primary"
-        app:startIconDrawable="@drawable/ic_person"
-        app:startIconTint="@color/color_primary"
-        app:boxStrokeColor="@drawable/states_color_text_fields"
-        app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
-        android:layout_marginTop="@dimen/common_padding_min"
-        android:layout_marginStart="@dimen/common_padding_default"
-        android:layout_marginEnd="@dimen/common_padding_default"
-        app:layout_constraintTop_toBottomOf="@id/dividerTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/guideline"
-        app:layout_constraintBottom_toBottomOf="@id/tilPosicion">
-        <com.google.android.material.textfield.TextInputEditText
-            android:textColor="@color/color_on_background"
-            android:id="@+id/etCliente"
-            android:enabled="false"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPosicion"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/common_textview_height"
-        android:hint="@string/posicion_carga"
-        app:hintTextColor="@color/color_on_surface"
-        app:startIconDrawable="@drawable/ic_local_gas_station"
-        app:startIconTint="@color/color_on_surface"
-        app:endIconTint="@color/color_on_surface"
-        app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-        app:boxCornerRadiusTopStart="@dimen/circle_radius"
-        app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
-        app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-        android:layout_marginStart="@dimen/common_padding_default"
-        android:layout_marginTop="@dimen/common_padding_min"
-        android:layout_marginEnd="@dimen/common_padding_default"
-        app:layout_constraintTop_toBottomOf="@id/dividerTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideline"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-            android:id="@+id/actvPosicion"
-            android:background="@color/color_surface"
-            android:textColor="@color/color_on_surface"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:paddingStart="@dimen/common_padding_textview"
-            android:paddingEnd="@dimen/common_padding_textview"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <GridLayout
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_padding_min"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilPosicion">
+        app:layout_constraintTop_toBottomOf="@id/dividerTitle">
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvComprobante"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_padding_min"
             android:layout_marginEnd="@dimen/common_padding_min"
-            android:layout_marginTop="@dimen/common_padding_min"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilPosicion">
+            android:layout_marginTop="@dimen/common_padding_min">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineInside"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintGuide_percent="0.6"
+                    app:layout_constraintTop_toTopOf="parent" />
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgCardComprobante"
                     android:layout_width="0dp"
@@ -126,128 +111,200 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCliente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    android:layout_marginEnd="@dimen/common_padding_default"
+                    android:hint="@string/cliente"
+                    app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
+                    app:boxCornerRadiusTopEnd="@dimen/circle_radius"
+                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
+                    app:boxStrokeColor="@drawable/states_color_text_fields"
+                    app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
+                    app:hintTextColor="@color/color_primary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgCardComprobante"
+                    app:endIconDrawable="@drawable/ic_person"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/color_primary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCliente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:textColor="@color/color_on_background"
+                        android:textSize="@dimen/common_text_min" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--<com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPosicion"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/common_textview_height"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    android:layout_marginEnd="@dimen/common_padding_default"
+                    android:hint="@string/posicion_carga"
+                    app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
+                    app:boxCornerRadiusTopEnd="@dimen/circle_radius"
+                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
+                    app:endIconTint="@color/color_on_surface"
+                    app:hintTextColor="@color/color_on_surface"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guidelineInside"
+                    app:layout_constraintTop_toBottomOf="@id/imgCardComprobante"
+                    app:startIconDrawable="@drawable/ic_local_gas_station"
+                    app:startIconTint="@color/color_on_surface">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/actvPosicion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_surface"
+                        android:paddingStart="@dimen/common_padding_textview"
+                        android:paddingEnd="@dimen/common_padding_textview"
+                        android:textAlignment="center"
+                        android:textColor="@color/color_on_surface"
+                        android:textSize="@dimen/common_text_min" />
+                </com.google.android.material.textfield.TextInputLayout>-->
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilFolio"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    android:layout_marginEnd="@dimen/common_padding_default"
                     android:hint="@string/folio"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
                     app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:endIconMode="custom"
-                    app:endIconDrawable="@drawable/ic_note"
-                    app:endIconTint="@color/color_primary"
+                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxStrokeColor="@drawable/states_color_text_fields"
                     app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_default"
-                    android:layout_marginEnd="@dimen/common_padding_default"
-                    app:layout_constraintTop_toBottomOf="@id/imgCardComprobante">
+                    app:endIconDrawable="@drawable/ic_note"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/color_primary"
+                    app:layout_constraintTop_toBottomOf="@id/tilCliente">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etFolio"
-                        android:enabled="false"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:enabled="false" />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilProducto"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    android:layout_marginEnd="@dimen/common_padding_default"
                     android:hint="@string/producto"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
                     app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:endIconMode="custom"
-                    app:endIconDrawable="@drawable/ic_local_gas_station"
-                    app:endIconTint="@color/color_primary"
+                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxStrokeColor="@drawable/states_color_text_fields"
                     app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_default"
-                    android:layout_marginEnd="@dimen/common_padding_default"
+                    app:endIconDrawable="@drawable/ic_local_gas_station"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/color_primary"
                     app:layout_constraintTop_toBottomOf="@id/tilFolio">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etProducto"
-                        android:enabled="false"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:enabled="false" />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilVolumen"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    android:layout_marginEnd="@dimen/common_padding_default"
                     android:hint="@string/volumen"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
                     app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:endIconMode="custom"
-                    app:endIconDrawable="@drawable/ic_liters"
-                    app:endIconTint="@color/color_primary"
+                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxStrokeColor="@drawable/states_color_text_fields"
                     app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_default"
-                    android:layout_marginEnd="@dimen/common_padding_default"
+                    app:endIconDrawable="@drawable/ic_drop"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/color_primary"
                     app:layout_constraintTop_toBottomOf="@id/tilProducto">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etVolumen"
-                        android:enabled="false"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:enabled="false" />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilPrecio"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    android:layout_marginEnd="@dimen/common_padding_default"
                     android:hint="@string/precio"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
                     app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:endIconMode="custom"
-                    app:endIconDrawable="@drawable/ic_attach_money"
-                    app:endIconTint="@color/color_primary"
+                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxStrokeColor="@drawable/states_color_text_fields"
                     app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_default"
-                    android:layout_marginEnd="@dimen/common_padding_default"
+                    app:endIconDrawable="@drawable/ic_price_tag"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/color_primary"
                     app:layout_constraintTop_toBottomOf="@id/tilVolumen">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etPrecio"
-                        android:enabled="false"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:enabled="false" />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilTotal"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/total"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
-                    app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:endIconMode="custom"
-                    app:endIconDrawable="@drawable/ic_attach_money"
-                    app:endIconTint="@color/color_primary"
-                    app:boxStrokeColor="@drawable/states_color_text_fields"
-                    app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
-                    android:layout_marginTop="@dimen/common_padding_min"
                     android:layout_marginStart="@dimen/common_padding_default"
+                    android:layout_marginTop="@dimen/common_padding_min"
                     android:layout_marginEnd="@dimen/common_padding_default"
                     android:layout_marginBottom="@dimen/common_padding_default"
-                    app:layout_constraintTop_toBottomOf="@id/tilPrecio"
-                    app:layout_constraintBottom_toBottomOf="parent">
+                    android:hint="@string/total"
+                    app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
+                    app:boxCornerRadiusTopEnd="@dimen/circle_radius"
+                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
+                    app:boxStrokeColor="@drawable/states_color_text_fields"
+                    app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
+                    app:endIconDrawable="@drawable/ic_attach_money"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/color_primary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tilPrecio">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etTotal"
@@ -258,9 +315,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
-    </GridLayout>
-
-
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnPrint"
@@ -274,11 +329,11 @@
         app:strokeColor="@color/color_primary"
         app:rippleColor="@color/color_primary_Variant"
         app:strokeWidth="@dimen/padding_elements_between_appbarlayout"
-        android:layout_marginTop="@dimen/common_padding_min"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintTop_toBottomOf="@id/gridLayout"
         app:layout_constraintStart_toEndOf="@id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 

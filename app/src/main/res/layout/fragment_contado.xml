@@ -329,7 +329,7 @@
                         android:layout_marginStart="@dimen/common_padding_min"
                         android:layout_marginEnd="@dimen/common_padding_min"
                         android:layout_marginBottom="@dimen/common_padding_min"
-                        app:icon="@drawable/ic_linked_camera"
+                        app:icon="@drawable/ic_scan_barcode"
                         app:rippleColor="@color/color_primary_Variant"
                         app:cornerRadius="@dimen/common_padding_default"
                         app:strokeColor="@color/color_primary"

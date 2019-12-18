@@ -20,4 +20,5 @@
     </style>
 
     <dimen name="common_text_in_appbarlayout">16sp</dimen>
+    <dimen name="common_text_min">14sp</dimen>
 </resources>

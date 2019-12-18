@@ -4,7 +4,7 @@
     <string name="contado">CONTADO</string>
     <string name="credito">CREDITO</string>
     <string name="anticipos">ANTICIPOS</string>
-    <string name="servicios">SERVICIOS</string>
+    <string name="servicios">OTROS</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -19,7 +19,7 @@
     <string name="card_message_tpv_small">Generación de comprobante para terminales de servicio, bancarias se podrán facturar (CFDI).</string>
     <string name="card_title_aceite">Aceites</string>
     <string name="card_message_aceite_small">Identificación de aceites mediante código de barras, obteniendo el precio del volumetrico.</string>
-    <string name="btnCamera">Scan Aceite</string>
+    <string name="btnCamera">Scann Aceite</string>
     <string name="comprobante">Comprobante</string>
     <string name="posicion_carga">Posicion de Carga</string>
     <string name="folio">Folio</string>
@@ -44,4 +44,7 @@
     <string name="facturacion">Facturación</string>
     <string name="marca">Bandera</string>
     <string name="estacion">Estacion</string>
+    <string name="base">Nombre de base</string>
+    <string name="update">Actualizar</string>
+    <string name="settings1">Settings</string>
 </resources>

@@ -110,7 +110,7 @@ public class ComprobanteActivity extends AppCompatActivity {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop();
         Glide.with(getApplicationContext())
-                .load("http://189.206.183.110:1390/nova/images/logonova.png")
+                    .load("http://189.206.183.110:1390/nova/images/logonova.png")
                 .apply(options)
                 .into(imgCardComprobante);
     }

@@ -10,10 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_primary"
+        app:titleTextColor="@color/color_on_primary"
         app:title="@string/app_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_settings"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:orientation="vertical"
@@ -55,12 +57,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
                 <ImageView
+                    android:id="@+id/ivVersion"
                     android:padding="@dimen/common_padding_min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_cloud_download"
-                    />
+                    android:onClick="CallVersion"/>
                 <LinearLayout
                     android:orientation="vertical"
                     android:paddingStart="@dimen/common_padding_default"
@@ -75,6 +78,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"/>
                     <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvVersionNueva"
+                        android:text="@string/version"
+                        android:textColor="@color/color_on_secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvVersionFecha"
                         android:text="@string/version"
                         android:textColor="@color/color_on_secondary"
                         android:layout_width="wrap_content"
@@ -104,11 +114,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
                 <ImageView
+                    android:id="@+id/ivOdbcConnect"
                     android:padding="@dimen/common_padding_min"
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_odbc_connect"/>
+                    android:src="@drawable/ic_odbc_connect"
+                    android:onClick="CallOdbcConnect"/>
                 <LinearLayout
                     android:orientation="vertical"
                     android:paddingStart="@dimen/common_padding_default"
@@ -167,11 +179,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
                 <ImageView
+                    android:id="@+id/ivOdbcVolumetrico"
                     android:padding="@dimen/common_padding_min"
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_odbc_volumetrico"/>
+                    android:src="@drawable/ic_odbc_volumetrico"
+                    android:onClick="CallOdbcVolumetrico"/>
                 <LinearLayout
                     android:orientation="vertical"
                     android:paddingStart="@dimen/common_padding_default"
@@ -181,6 +195,12 @@
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvIpVolumetrico"
                         android:text="@string/ip"
+                        android:textColor="@color/color_on_secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBaseVolumetrico"
+                        android:text="@string/base"
                         android:textColor="@color/color_on_secondary"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"/>
@@ -204,12 +224,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"/>
                     <com.google.android.material.chip.Chip
+                        android:id="@+id/chGateway"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/gateway"
                         app:chipBackgroundColor="@color/color_background"
-                        android:textColor="@color/color_on_primary"
-                        app:chipIconTint="@color/color_on_primary"
+                        android:textColor="@color/color_on_secondary"
+                        app:chipIconTint="@color/color_primary_Variant"
                         android:enabled="false"
                         android:checkable="true"/>
                 </LinearLayout>
@@ -236,14 +257,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
                 <ImageView
+                    android:id="@+id/ivFacturacion"
                     android:padding="@dimen/common_padding_min"
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_cfdi"/>
+                    android:src="@drawable/ic_cfdi"
+                    android:onClick="CallIntegra"/>
                 <LinearLayout
                     android:orientation="vertical"
-                    android:padding="@dimen/common_padding_default"
+                    android:paddingStart="@dimen/common_padding_default"
+                    android:paddingEnd="@dimen/common_padding_default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textview.MaterialTextView
