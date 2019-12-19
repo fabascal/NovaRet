@@ -24,14 +24,14 @@
         android:textAlignment="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/common_padding_min"
+        android:paddingTop="@dimen/common_padding_default"
+        android:paddingBottom="@dimen/common_padding_default"
         android:layout_marginStart="@dimen/common_padding_min"
         android:layout_marginEnd="@dimen/common_padding_min"
-        app:layout_constraintBottom_toBottomOf="@id/tilPosicion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/tilPosicion" />
-    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--<com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPosicion"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="0dp"
@@ -63,13 +63,22 @@
             android:textAlignment="center"
             android:textColor="@color/color_on_surface"
             android:textSize="@dimen/common_text_min" />
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>-->
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spnPosicion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dividerTitle"
+        style="@style/MySpinner"/>
     <View
         android:id="@+id/dividerTitle"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="@dimen/padding_elements_appbarlayout"
-        app:layout_constraintTop_toBottomOf="@id/tilPosicion"
+        app:layout_constraintTop_toBottomOf="@id/tvcomprobante"
         android:layout_marginStart="@dimen/common_padding_default"
         android:layout_marginEnd="@dimen/common_padding_default"
         android:background="@color/divider_light"
