@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/common_padding_min">
+        <!--<ImageView
+            android:id="@+id/icon"
+            android:tint="@color/color_primary"
+            android:src="@drawable/ic_local_gas_station"
+            android:padding="@dimen/common_padding_default"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />-->
+        <TextView
+            android:drawableStart="@drawable/ic_local_gas_station"
+            android:id="@+id/posicion"
+            style="?android:attr/spinnerDropDownItemStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="none"
+            android:text="1"
+            android:textSize="@dimen/common_text_spinner_posicion"
+            android:textAlignment="center"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:singleLine="false" />
+
+</LinearLayout>

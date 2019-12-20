@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/containerMain"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -66,8 +67,10 @@
     </com.google.android.material.textfield.TextInputLayout>-->
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/spnPosicion"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:layout_marginEnd="@dimen/common_padding_min"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent"
@@ -129,10 +132,7 @@
                     android:layout_marginTop="@dimen/common_padding_min"
                     android:layout_marginEnd="@dimen/common_padding_default"
                     android:hint="@string/cliente"
-                    app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
+
                     app:boxStrokeColor="@drawable/states_color_text_fields"
                     app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
                     app:hintTextColor="@color/color_primary"
@@ -194,10 +194,6 @@
                     android:layout_marginTop="@dimen/common_padding_min"
                     android:layout_marginEnd="@dimen/common_padding_default"
                     android:hint="@string/folio"
-                    app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxStrokeColor="@drawable/states_color_text_fields"
                     app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
                     app:endIconDrawable="@drawable/ic_note"
@@ -209,6 +205,7 @@
                         android:id="@+id/etFolio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/color_on_background"
                         android:enabled="false" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -221,10 +218,6 @@
                     android:layout_marginTop="@dimen/common_padding_min"
                     android:layout_marginEnd="@dimen/common_padding_default"
                     android:hint="@string/producto"
-                    app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxStrokeColor="@drawable/states_color_text_fields"
                     app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
                     app:endIconDrawable="@drawable/ic_local_gas_station"
@@ -236,6 +229,7 @@
                         android:id="@+id/etProducto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/color_on_background"
                         android:enabled="false" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -248,10 +242,6 @@
                     android:layout_marginTop="@dimen/common_padding_min"
                     android:layout_marginEnd="@dimen/common_padding_default"
                     android:hint="@string/volumen"
-                    app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxStrokeColor="@drawable/states_color_text_fields"
                     app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
                     app:endIconDrawable="@drawable/ic_drop"
@@ -263,6 +253,7 @@
                         android:id="@+id/etVolumen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/color_on_background"
                         android:enabled="false" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -275,10 +266,6 @@
                     android:layout_marginTop="@dimen/common_padding_min"
                     android:layout_marginEnd="@dimen/common_padding_default"
                     android:hint="@string/precio"
-                    app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxStrokeColor="@drawable/states_color_text_fields"
                     app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
                     app:endIconDrawable="@drawable/ic_price_tag"
@@ -290,6 +277,7 @@
                         android:id="@+id/etPrecio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/color_on_background"
                         android:enabled="false" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -303,10 +291,6 @@
                     android:layout_marginEnd="@dimen/common_padding_default"
                     android:layout_marginBottom="@dimen/common_padding_default"
                     android:hint="@string/total"
-                    app:boxCornerRadiusBottomEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusBottomStart="@dimen/circle_radius"
-                    app:boxCornerRadiusTopEnd="@dimen/circle_radius"
-                    app:boxCornerRadiusTopStart="@dimen/circle_radius"
                     app:boxStrokeColor="@drawable/states_color_text_fields"
                     app:boxStrokeWidth="@dimen/padding_elements_between_appbarlayout"
                     app:endIconDrawable="@drawable/ic_attach_money"
@@ -319,6 +303,7 @@
                         android:id="@+id/etTotal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/color_on_background"
                         android:enabled="false" />
                 </com.google.android.material.textfield.TextInputLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -331,7 +316,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/print"
-        app:cornerRadius="@dimen/circle_radius"
+        app:cornerRadius="@dimen/common_padding_none"
         android:textColor="@color/color_primary"
         app:icon="@drawable/ic_receipt"
         app:iconTint="@color/color_primary"

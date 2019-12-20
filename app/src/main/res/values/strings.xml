@@ -18,7 +18,7 @@
     <string name="card_title_tpv">TPV\'s</string>
     <string name="card_message_tpv_small">Generación de comprobante para terminales de servicio, bancarias se podrán facturar (CFDI).</string>
     <string name="card_title_aceite">Aceites</string>
-    <string name="card_message_aceite_small">Identificación de aceites mediante código de barras, obteniendo el precio del volumetrico.</string>
+    <string name="card_message_aceite_small">Identificación de aceites por código de barras, obteniendo el precio del volumetrico.</string>
     <string name="btnCamera">Scann Aceite</string>
     <string name="comprobante">Comprobante</string>
     <string name="posicion_carga">Posicion de Carga</string>
@@ -47,4 +47,48 @@
     <string name="base">Nombre de base</string>
     <string name="update">Actualizar</string>
     <string name="settings1">Settings</string>
+    <!--creamos recursos para SharedPreferences-->
+    <string name="spVersionName">spVersionName</string>
+    <string name="spVersionDate">spVersionDate</string>
+    <string name="spIpConnect">spIpConnect</string>
+    <string name="spUserConnect">spUserConnect</string>
+    <string name="spPassConnect">spPassConnect</string>
+    <string name="spPortConnect">spPortConnect</string>
+    <string name="spIpVolumetrico">spIpVolumetrico</string>
+    <string name="spDbVolumetrico">spDbVolumetrico</string>
+    <string name="spUserVolumetrico">spUserVolumetrico</string>
+    <string name="spPassVolumetrico">spPassVolumetrico</string>
+    <string name="spPortVolumetrico">spPortVolumetrico</string>
+    <string name="spSgpmGatewayVolumetrico">spSgpmGatewayVolumetrico</string>
+    <string name="spUrlIntegra">spUrlIntegra</string>
+    <string name="spBandera">spBandera</string>
+    <string name="spCveest">spCveest</string>
+    <string name="dialog_confirm_title">Parece que algo salio mal.</string>
+    <string name="message_action_success">Confirmar</string>
+    <string name="dialog_confirm">Confirmar</string>
+    <string name="dialog_cancel">Cancelar</string>
+    <!--Recursos para la impresion-->
+    <string name="title_err_code">Error Code</string>
+    <string name="title_err_method">Method</string>
+    <string name="title_msg_result">Result</string>
+    <string name="title_msg_description">Description</string>
+    <string name="handlingmsg_warn_receipt_near_end">Roll paper is nearly end.\n</string>
+    <string name="handlingmsg_warn_battery_near_end">Battery level of printer is low.\n</string>
+    <string name="handlingmsg_err_no_response">Please check the connection of the printer and the mobile terminal.\nConnection get lost.\n</string>
+    <string name="handlingmsg_err_cover_open">Please close roll paper cover.\n</string>
+    <string name="handlingmsg_err_receipt_end">Please check roll paper.\n</string>
+    <string name="handlingmsg_err_paper_feed">Please release a paper feed switch.\n</string>
+    <string name="handlingmsg_err_autocutter">Please remove jammed paper and close roll paper cover.\nRemove any jammed paper or foreign substances in the printer, and then turn the printer off and turn the printer on again.\n</string>
+    <string name="handlingmsg_err_need_recover">Then, If the printer doesn\'t recover from error, please cycle the power switch.\n</string>
+    <string name="handlingmsg_err_unrecover">Please cycle the power switch of the printer.\nIf same errors occurred even power cycled, the printer may out of order.</string>
+    <string name="handlingmsg_err_overheat">Please wait until error LED of the printer turns off. \n</string>
+    <string name="handlingmsg_err_head">Print head of printer is hot.\n</string>
+    <string name="handlingmsg_err_motor">Motor Driver IC of printer is hot.\n</string>
+    <string name="handlingmsg_err_battery">Battery of printer is hot.\n</string>
+    <string name="handlingmsg_err_wrong_paper">Please set correct roll paper.\n</string>
+    <string name="handlingmsg_err_battery_real_end">Please connect AC adapter or change the battery.\nBattery of printer is almost empty.\n</string>
+    <string name="handlingmsg_err_offline">Printer is offline.\n</string>
+    <string name="dialog_confirm_title_printer">Resultado de impresion</string>
+    <string name="dialog_inicio">Iniciar</string>
+    <string name="dialog_reimpresion">Imprimir otro</string>
 </resources>

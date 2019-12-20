@@ -22,7 +22,9 @@ public class UtilsSettings extends Application {
 
 
     private  JSONObject GetSharedSettings(Context context) throws JSONException {
-        SharedPreferences sharedPreferences = context.getSharedPreferences("Configuraciones", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = context.getSharedPreferences("Configuraciones",
+                Context.MODE_PRIVATE);
+
         JSONObject result = new JSONObject();
         /*Log.w("prueba1",context.getResources().getString(R.string.spVersionName));*/
         result.put(context.getResources().getString(R.string.spVersionName),sharedPreferences.getString(context.getResources().getString(R.string.spVersionName),""));

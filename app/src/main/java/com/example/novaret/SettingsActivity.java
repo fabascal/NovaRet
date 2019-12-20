@@ -18,14 +18,16 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.util.Util;
+import com.example.novaret.Utils.UtilsDialogError;
 import com.example.novaret.Utils.UtilsVersion;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.textview.MaterialTextView;
 
-import java.util.Set;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -77,6 +79,7 @@ public class SettingsActivity extends AppCompatActivity {
     @BindView(R.id.tvEstacion)
     MaterialTextView tvEstacion;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,32 +88,117 @@ public class SettingsActivity extends AppCompatActivity {
         String title = getResources().getString(R.string.app_name).toUpperCase() + " - " + getResources().getString(R.string.settings1).toUpperCase();
         toolbar.setTitle(title);
         InitializateVals();
+        UiGetSharedPreference();
     }
 
     public void CallUpdate(MenuItem menuItem) {
-        Toast.makeText(this, R.string.update, Toast.LENGTH_SHORT).show();
-        /*Iniciamos la libreria SharedPreferences para guardar datos obtenidos de integra mediante volley*/
-        SharedPreferences sharedPreferences =
-                getSharedPreferences("Configuraciones", Context.MODE_PRIVATE);
         /*Iniciamos el metodo Request de la libreria Volley*/
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://www.google.com";
+        String url = "http://189.206.183.110:1390/nova/mobil/settings_mobil.php";
         /*Solicitamos al variable retornada de la url mencionada*/
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Log.w("VolleyResponse", response);
-                        Toast.makeText(getApplicationContext(),"Response is : ",Toast.LENGTH_SHORT).show();
+                        try {
+                            SaveDataPreference(response);
+
+                        } catch (JSONException e) {
+                            UtilsDialogError.showAlert(SettingsActivity.this, String.valueOf(e));
+                            e.printStackTrace();
+                        }
+
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.w("VolleyError",error);
-                Toast.makeText(getApplication(),"That didn't work!" + error, Toast.LENGTH_SHORT).show();
+                UtilsDialogError.showAlert(SettingsActivity.this, String.valueOf(error));
             }
         });
         queue.add(stringRequest);
+    }
+    public void SaveDataPreference( String response) throws JSONException {
+        JSONObject jsonObject = new JSONObject(response);
+        if (jsonObject.getInt("estado")==1){
+            SharedPreferences sharedPreferences =
+                    getSharedPreferences("Configuraciones", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(getString(R.string.spVersionName),jsonObject.getString("versionName"));
+            editor.putString(getString(R.string.spVersionDate),jsonObject.getString("versionDate"));
+            editor.putString(getString(R.string.spIpConnect),jsonObject.getString("ipConnect"));
+            editor.putString(getString(R.string.spUserConnect),jsonObject.getString("userConnect"));
+            editor.putString(getString(R.string.spPassConnect),jsonObject.getString("passConnect"));
+            editor.putString(getString(R.string.spPortConnect),jsonObject.getString("portConnect"));
+            editor.putString(getString(R.string.spIpVolumetrico),jsonObject.getString("ipVolumetrico"));
+            editor.putString(getString(R.string.spDbVolumetrico),jsonObject.getString("dbVolumetrico"));
+            editor.putString(getString(R.string.spUserVolumetrico),jsonObject.getString("userVolumetrico"));
+            editor.putString(getString(R.string.spPassVolumetrico),jsonObject.getString("passVolumetrico"));
+            editor.putString(getString(R.string.spPortVolumetrico),jsonObject.getString("portVolumetrico"));
+            editor.putBoolean(getString(R.string.spSgpmGatewayVolumetrico),jsonObject.getBoolean("sgpmGateway"));
+            editor.putString(getString(R.string.spUrlIntegra),jsonObject.getString("urlIntegra"));
+            editor.putString(getString(R.string.spBandera),jsonObject.getString("banderaIntegra"));
+            editor.putString(getString(R.string.spCveest),jsonObject.getString("cveestIntegra"));
+            editor.commit();
+            ShowDataPreference(response);
+        }else if(jsonObject.getInt("estado")==2){
+            UtilsDialogError.showAlert(SettingsActivity.this, jsonObject.getString("mensaje"));
+        }
+
+    }
+    public void ShowDataPreference(String response) throws JSONException {
+        JSONObject jsonObject = new JSONObject(response);
+        if (jsonObject.getInt("estado")==1){
+            tvVersionNueva.setText(jsonObject.getString("versionName"));
+            tvVersionFecha.setText(jsonObject.getString("versionDate"));
+            tvIpConnecta.setText(jsonObject.getString("ipConnect"));
+            tvUsuarioConnecta.setText(jsonObject.getString("userConnect"));
+            tvPasswordConnecta.setText(jsonObject.getString("passConnect"));
+            tvPortConnecta.setText(jsonObject.getString("portConnect"));
+            tvIpVolumetrico.setText(jsonObject.getString("ipVolumetrico"));
+            tvBaseVolumetrico.setText(jsonObject.getString("dbVolumetrico"));
+            tvUsuarioVolumetrico.setText(jsonObject.getString("userVolumetrico"));
+            tvPasswordVolumetrico.setText(jsonObject.getString("passVolumetrico"));
+            tvPortVolumetrico.setText(jsonObject.getString("portVolumetrico"));
+            chGateway.setChecked(jsonObject.getBoolean("sgpmGateway"));
+            tvUrlIntegra.setText(jsonObject.getString("urlIntegra"));
+            tvMarca.setText(jsonObject.getString("banderaIntegra"));
+            tvEstacion.setText(jsonObject.getString("cveestIntegra"));
+        }
+
+    }
+
+    public void UiGetSharedPreference(){
+        SharedPreferences sharedPreferences =
+                getSharedPreferences("Configuraciones", Context.MODE_PRIVATE);
+        String versionNameD = getResources().getString(R.string.version);
+        tvVersionNueva.setText(sharedPreferences.getString(getString(R.string.spVersionName),versionNameD));
+        String versionDateD = getResources().getString(R.string.spVersionDate);
+        tvVersionFecha.setText(sharedPreferences.getString(getString(R.string.spVersionDate),versionDateD));
+        String spIpConnectD = getResources().getString(R.string.ip);
+        tvIpConnecta.setText(sharedPreferences.getString(getString(R.string.spIpConnect),spIpConnectD));
+        String userConnectD = getResources().getString(R.string.usuario);
+        tvUsuarioConnecta.setText(sharedPreferences.getString(getString(R.string.spUserConnect),userConnectD));
+        String passConnectD = getResources().getString(R.string.password);
+        tvPasswordConnecta.setText(sharedPreferences.getString(getString(R.string.spPassConnect),passConnectD));
+        String portConnectD = getResources().getString(R.string.puerto);
+        tvPortConnecta.setText(sharedPreferences.getString(getString(R.string.spPortConnect),portConnectD));
+        String ipVolumetricoD = getResources().getString(R.string.ip);
+        tvIpVolumetrico.setText(sharedPreferences.getString(getString(R.string.spIpVolumetrico),ipVolumetricoD));
+        String dbVolumetricoD = getResources().getString(R.string.base);
+        tvBaseVolumetrico.setText(sharedPreferences.getString(getString(R.string.spDbVolumetrico),dbVolumetricoD));
+        String userVolumetricoD = getResources().getString(R.string.usuario);
+        tvUsuarioVolumetrico.setText(sharedPreferences.getString(getString(R.string.spUserVolumetrico),userVolumetricoD));
+        String passVolumetricoD = getResources().getString(R.string.password);
+        tvPasswordVolumetrico.setText(sharedPreferences.getString(getString(R.string.spPassVolumetrico),passVolumetricoD));
+        String portVolumetricoD = getResources().getString(R.string.puerto);
+        tvPortVolumetrico.setText(sharedPreferences.getString(getString(R.string.spPortVolumetrico),portVolumetricoD));
+        chGateway.setChecked(sharedPreferences.getBoolean(getString(R.string.spSgpmGatewayVolumetrico),false));
+        String urlIntegraD = getResources().getString(R.string.ip);
+        tvUrlIntegra.setText(sharedPreferences.getString(getString(R.string.spUrlIntegra),urlIntegraD));
+        String banderaIntegraD = getResources().getString(R.string.marca);
+        tvMarca.setText(sharedPreferences.getString(getString(R.string.spBandera),banderaIntegraD));
+        String cveestIntegraD = getResources().getString(R.string.estacion);
+        tvEstacion.setText(sharedPreferences.getString(getString(R.string.spCveest),cveestIntegraD));
     }
 
 
@@ -118,7 +206,7 @@ public class SettingsActivity extends AppCompatActivity {
         try {
             tvVersion.setText(UtilsVersion.GetVersion(getApplicationContext()));
         } catch (PackageManager.NameNotFoundException e) {
-            Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT).show();
+            UtilsDialogError.showAlert(SettingsActivity.this, e.toString());
             e.printStackTrace();
         }
 
@@ -131,6 +219,7 @@ public class SettingsActivity extends AppCompatActivity {
             PackageInfo pInfo = this.getPackageManager().getPackageInfo(getPackageName(), 0);
             tvVersion.setText(pInfo.versionName);
         } catch (PackageManager.NameNotFoundException e) {
+            UtilsDialogError.showAlert(SettingsActivity.this, e.toString());
             e.printStackTrace();
         }
 

@@ -32,6 +32,7 @@ def dbflowVersion = "4.2.4"
 def glideVersion = "4.10.0"
 def circleimageviewVersion = "3.0.1"
 def volleyVersion = "1.1.1"
+def preferenceVersion = "1.1.0"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -45,6 +46,7 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:${glideVersion}"
     implementation "de.hdodenhof:circleimageview:${circleimageviewVersion}"
     implementation "com.android.volley:volley:${volleyVersion}"
+    implementation "androidx.preference:preference:${preferenceVersion}"
 
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -57,4 +59,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation files('libs/jtds-1.3.1.jar')
+    implementation files('libs/ePOS2.jar')
+    implementation files('libs/ePOSEasySelect.jar')
 }

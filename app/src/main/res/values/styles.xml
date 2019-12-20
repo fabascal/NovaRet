@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="spinnerStyle">@style/MySpinner</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -18,7 +19,9 @@
         <item name="android:enabled">false</item>
         <item name="android:textAlignment">center</item>
     </style>
-
+    <style name="MySpinner" parent="Base.Widget.AppCompat.Spinner">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
     <dimen name="common_text_in_appbarlayout">16sp</dimen>
     <dimen name="common_text_min">14sp</dimen>
 </resources>
