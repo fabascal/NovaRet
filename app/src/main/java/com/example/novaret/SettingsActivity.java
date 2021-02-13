@@ -44,8 +44,7 @@ public class SettingsActivity extends AppCompatActivity {
     ImageView ivOdbcConnect;
     @BindView(R.id.ivOdbcVolumetrico)
     ImageView ivOdbcVolumetrico;
-    @BindView(R.id.ivFacturacion)
-    ImageView ivFacturacion;
+
     @BindView(R.id.tvVersion)
     MaterialTextView tvVersion;
     @BindView(R.id.tvVersionNueva)
@@ -70,14 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
     MaterialTextView tvPasswordVolumetrico;
     @BindView(R.id.tvPortVolumetrico)
     MaterialTextView tvPortVolumetrico;
-    @BindView(R.id.tvUrlIntegra)
-    MaterialTextView tvUrlIntegra;
-    @BindView(R.id.tvMacArd)
-    MaterialTextView tvMacArd;
-    @BindView(R.id.tvMarca)
-    MaterialTextView tvMarca;
-    @BindView(R.id.tvEstacion)
-    MaterialTextView tvEstacion;
+
 
 
     @Override
@@ -94,7 +86,7 @@ public class SettingsActivity extends AppCompatActivity {
     public void CallUpdate(MenuItem menuItem) {
         /*Iniciamos el metodo Request de la libreria Volley*/
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://189.206.183.110:1390/nova/mobil/settings_mobil.php";
+        String url = "http://189.206.183.110:1390/cecg_app/mobil/settings_mobil.php";
         /*Solicitamos al variable retornada de la url mencionada*/
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -104,7 +96,8 @@ public class SettingsActivity extends AppCompatActivity {
                             SaveDataPreference(response);
 
                         } catch (JSONException e) {
-                            UtilsDialogError.showAlert(SettingsActivity.this, String.valueOf(e));
+                            UtilsDialogError.showAlert(SettingsActivity.this,
+                                    getApplicationContext().getString(R.string.dialog_title_error),String.valueOf(e));
                             e.printStackTrace();
                         }
 
@@ -112,7 +105,8 @@ public class SettingsActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                UtilsDialogError.showAlert(SettingsActivity.this, String.valueOf(error));
+                UtilsDialogError.showAlert(SettingsActivity.this,
+                        getApplicationContext().getString(R.string.dialog_title_error), String.valueOf(error));
             }
         });
         queue.add(stringRequest);
@@ -141,11 +135,12 @@ public class SettingsActivity extends AppCompatActivity {
             editor.commit();
             ShowDataPreference(response);
         }else if(jsonObject.getInt("estado")==2){
-            UtilsDialogError.showAlert(SettingsActivity.this, jsonObject.getString("mensaje"));
+            UtilsDialogError.showAlert(SettingsActivity.this,
+                    getApplicationContext().getString(R.string.dialog_title_error),jsonObject.getString("mensaje"));
         }
 
     }
-    public void ShowDataPreference(String response) throws JSONException {
+        public void ShowDataPreference(String response) throws JSONException {
         JSONObject jsonObject = new JSONObject(response);
         if (jsonObject.getInt("estado")==1){
             tvVersionNueva.setText(jsonObject.getString("versionName"));
@@ -160,9 +155,10 @@ public class SettingsActivity extends AppCompatActivity {
             tvPasswordVolumetrico.setText(jsonObject.getString("passVolumetrico"));
             tvPortVolumetrico.setText(jsonObject.getString("portVolumetrico"));
             chGateway.setChecked(jsonObject.getBoolean("sgpmGateway"));
-            tvUrlIntegra.setText(jsonObject.getString("urlIntegra"));
-            tvMarca.setText(jsonObject.getString("banderaIntegra"));
-            tvEstacion.setText(jsonObject.getString("cveestIntegra"));
+
+            UtilsDialogError.showAlert(SettingsActivity.this,
+                    getApplicationContext().getString(R.string.app_name),
+                    getApplicationContext().getString(R.string.Save));
         }
 
     }
@@ -194,11 +190,7 @@ public class SettingsActivity extends AppCompatActivity {
         tvPortVolumetrico.setText(sharedPreferences.getString(getString(R.string.spPortVolumetrico),portVolumetricoD));
         chGateway.setChecked(sharedPreferences.getBoolean(getString(R.string.spSgpmGatewayVolumetrico),false));
         String urlIntegraD = getResources().getString(R.string.ip);
-        tvUrlIntegra.setText(sharedPreferences.getString(getString(R.string.spUrlIntegra),urlIntegraD));
-        String banderaIntegraD = getResources().getString(R.string.marca);
-        tvMarca.setText(sharedPreferences.getString(getString(R.string.spBandera),banderaIntegraD));
-        String cveestIntegraD = getResources().getString(R.string.estacion);
-        tvEstacion.setText(sharedPreferences.getString(getString(R.string.spCveest),cveestIntegraD));
+
     }
 
 
@@ -206,7 +198,8 @@ public class SettingsActivity extends AppCompatActivity {
         try {
             tvVersion.setText(UtilsVersion.GetVersion(getApplicationContext()));
         } catch (PackageManager.NameNotFoundException e) {
-            UtilsDialogError.showAlert(SettingsActivity.this, e.toString());
+            UtilsDialogError.showAlert(SettingsActivity.this,
+                    getApplicationContext().getString(R.string.dialog_title_error),e.toString());
             e.printStackTrace();
         }
 
@@ -219,7 +212,8 @@ public class SettingsActivity extends AppCompatActivity {
             PackageInfo pInfo = this.getPackageManager().getPackageInfo(getPackageName(), 0);
             tvVersion.setText(pInfo.versionName);
         } catch (PackageManager.NameNotFoundException e) {
-            UtilsDialogError.showAlert(SettingsActivity.this, e.toString());
+            UtilsDialogError.showAlert(SettingsActivity.this,
+                    getApplicationContext().getString(R.string.dialog_title_error),e.toString());
             e.printStackTrace();
         }
 

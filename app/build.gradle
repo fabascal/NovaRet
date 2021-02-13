@@ -10,6 +10,16 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi", "x86"
+        }
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            universalApk true
+        }
     }
     buildTypes {
         release {
@@ -24,15 +34,15 @@ android {
     }
 }
 
-def constraintVersion = "1.1.3"
-def appcompatVersion = "1.1.0"
-def materialVersion = "1.2.0-alpha02"
-def butterknifeVersion = "10.2.0"
+def constraintVersion = "2.0.4"
+def appcompatVersion = "1.2.0"
+def materialVersion = "1.3.0"
+def butterknifeVersion = "10.2.3"
 def dbflowVersion = "4.2.4"
 def glideVersion = "4.10.0"
 def circleimageviewVersion = "3.0.1"
 def volleyVersion = "1.1.1"
-def preferenceVersion = "1.1.0"
+def preferenceVersion = "1.1.1"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -50,16 +60,18 @@ dependencies {
 
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
     annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflowVersion}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${butterknifeVersion}"
     annotationProcessor "com.github.bumptech.glide:compiler:${glideVersion}"
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation files('libs/jtds-1.3.1.jar')
     implementation files('libs/ePOS2.jar')
     implementation files('libs/ePOSEasySelect.jar')
+    implementation files('libs/libepos2.so')
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 }

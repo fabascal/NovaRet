@@ -24,4 +24,13 @@
     </style>
     <dimen name="common_text_in_appbarlayout">16sp</dimen>
     <dimen name="common_text_min">14sp</dimen>
+    <style name="ItemLarge" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="ItemMedium" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:maxLines">2</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
 </resources>

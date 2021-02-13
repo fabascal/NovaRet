@@ -21,6 +21,7 @@ import com.example.novaret.Fragments.CreditoFragment;
 import com.example.novaret.Fragments.DashboardFragment;
 import com.example.novaret.Fragments.ServiciosFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.raizlabs.android.dbflow.sql.language.Operator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -68,29 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
             }return false;
         });
-        /*bottomNavigationView.setOnNavigationItemSelectedListener( new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch (item.getItemId()) {
-                    case R.id.action_dashboard:
-                        viewPager.setCurrentItem(0);
-                        return true;
-                    case R.id.action_contado:
-                        viewPager.setCurrentItem(1);
-                        return true;
-                    case R.id.action_credito:
-                        viewPager.setCurrentItem(2);
-                        return true;
-                    case R.id.action_anticipos:
-                        viewPager.setCurrentItem(3);
-                        return true;
-                    case R.id.action_servicios:
-                        viewPager.setCurrentItem(4);
-                        return true;
-                }return false;
-            }
-        });*/
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             viewPager.addOnUnhandledKeyEventListener(new View.OnUnhandledKeyEventListener() {
                 @Override
@@ -201,6 +180,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void CallPrinter(MenuItem menuItem){
+        Intent intent = new Intent(MainActivity.this, PrinterActivity.class);
+        startActivity(intent);
         Toast.makeText(this,R.string.printer,Toast.LENGTH_SHORT).show();
     }
 }

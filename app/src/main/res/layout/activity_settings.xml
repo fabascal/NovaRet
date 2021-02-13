@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -237,67 +238,7 @@
                         android:checkable="true"/>
                 </LinearLayout>
             </LinearLayout>
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvFacturacionLabel"
-                android:text="@string/facturacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/common_padding_none"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/llOdbcVolumetrico"
-                style="@style/TextAppearance.MaterialComponents.Subtitle1"/>
-            <LinearLayout
-                android:id="@+id/llFacturacion"
-                android:orientation="horizontal"
-                android:background="@color/linear_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/common_padding_min"
-                android:layout_marginEnd="@dimen/common_padding_min"
-                android:padding="@dimen/padding_elements_between_appbarlayout"
-                app:layout_constraintTop_toBottomOf="@id/tvFacturacionLabel"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-                <ImageView
-                    android:id="@+id/ivFacturacion"
-                    android:padding="@dimen/common_padding_min"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_cfdi"
-                    android:onClick="CallIntegra"/>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:paddingStart="@dimen/common_padding_default"
-                    android:paddingEnd="@dimen/common_padding_default"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvUrlIntegra"
-                        android:text="@string/ip"
-                        android:textColor="@color/color_on_secondary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"/>
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvMacArd"
-                        android:text="@string/ip"
-                        android:textColor="@color/color_on_secondary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"/>
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvMarca"
-                        android:text="@string/marca"
-                        android:textColor="@color/color_on_secondary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"/>
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvEstacion"
-                        android:text="@string/estacion"
-                        android:textColor="@color/color_on_secondary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"/>
-                </LinearLayout>
-            </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

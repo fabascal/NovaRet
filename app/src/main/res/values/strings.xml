@@ -34,7 +34,7 @@
     <string name="settings">Configuraciones</string>
     <string name="printer">Impresoras</string>
     <string name="version">Versión</string>
-    <string name="odbcConnect">ODBC - Connect</string>
+    <string name="odbcConnect">ODBC - Integra</string>
     <string name="ip">192.168.1.250</string>
     <string name="usuario">Usuario</string>
     <string name="password">Password</string>
@@ -63,7 +63,8 @@
     <string name="spUrlIntegra">spUrlIntegra</string>
     <string name="spBandera">spBandera</string>
     <string name="spCveest">spCveest</string>
-    <string name="dialog_confirm_title">Parece que algo salio mal.</string>
+    <string name="dialog_title_error">Parece que algo salio mal.</string>
+    <string name="dialog_title_succed">Parece que algo salio mal.</string>
     <string name="message_action_success">Confirmar</string>
     <string name="dialog_confirm">Confirmar</string>
     <string name="dialog_cancel">Cancelar</string>
@@ -91,4 +92,19 @@
     <string name="dialog_confirm_title_printer">Resultado de impresion</string>
     <string name="dialog_inicio">Iniciar</string>
     <string name="dialog_reimpresion">Imprimir otro</string>
+    <string name="Save">Datos guardados exitosamente !!!</string>
+    <string name="chooserPayment">Metodo de pago</string>
+    <string name="btnTicketTest">Test de impresion</string>
+    <string name="PrinterName">Impresora</string>
+    <string name="PrinterMac">Impresora destino</string>
+    <string name="card_title_rfic">Etiqueta RFID</string>
+    <string name="card_message_rfid">Proceso para identificación de un cliente mediante etiqueta, llavero o tarjeta con chip RFID.</string>
+    <string name="btnRfid">RFID</string>
+    <string name="card_title_nombre">Busqueda nombre</string>
+    <string name="card_message_nombre">Proceso para identificación de un cliente mediante el nombre, se deberá tener mínimo tres caracteres para proceder con la búsqueda.</string>
+    <string name="btnNombre">Nombre</string>
+    <string name="btnNip">NIP</string>
+    <string name="card_title_nip">Busqueda NIP</string>
+    <string name="card_message_nip">Proceso para identificación de un cliente mediante el NIP asignado a la unidad del cliente.</string>
+    <string name="menu_hint_posicion">Bomba</string>
 </resources>

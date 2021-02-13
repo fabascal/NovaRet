@@ -16,10 +16,10 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class UtilsDialogError {
 
-    public static void showAlert(Context context, String message)
+    public static void showAlert(Context context, String title,String message)
     {
         new MaterialAlertDialogBuilder(context,R.style.MaterialAlertDialog_MaterialComponents_Title_Icon)
-                .setTitle(R.string.dialog_confirm_title)
+                .setTitle(title)
                 .setMessage(message)
                 .setNegativeButton(R.string.dialog_confirm, null)
                 .show();
